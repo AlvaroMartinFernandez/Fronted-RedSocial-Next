@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { dmSans } from "@/app/fonts";
 interface DataPost {
   userId: number;
   id: number;
@@ -30,7 +30,7 @@ export default async function PostProfile({ params }: {
   if (post.length === 0) {
 
     return (
-      <div className="flex justify-center items-center mt-20">
+      <div className={`${dmSans.className} flex justify-center items-center mt-20`}>
         <div className="flex-col justify-center items-center">
           <Image
             src="/empty-box.svg"
@@ -41,7 +41,7 @@ export default async function PostProfile({ params }: {
             priority
           />
           <h2 className="mt-3 text-xl font-semibold text-center text-[#4B4B52]">Aun no tiene</h2>
-          <h2 className="mt-3 text-xl font-semibold text-center text-[#4B4B52]">comentarios</h2>
+          <h2 className="mt-3 text-xl font-semibold text-center text-[#4B4B52] translate-y-[-10px]">comentarios</h2>
         </div>
       </div>
     )
@@ -51,9 +51,9 @@ export default async function PostProfile({ params }: {
       {post.map((post) => {
         return (
 
-          <ul className="flex p-4 flex-col gap-4 items-start self-stretch border-b border-gray-300 border-opa" key={post.id}>
-            <li><p className="text-[#9795B5] text-sm font-dm-sans font-normal leading-6">{'"'}{post.body}{'"'}</p></li>
-            <li><h2 className="text-[##5D5A88] text-sm font-dm-sans font-bold leading-5 ">{post.title}</h2></li>
+          <ul className={`${dmSans.className} flex p-4 flex-col gap-4 items-start self-stretch border-b border-gray-300 border-opa`} key={post.id}>
+            <li><p className="text-[#9795B5] text-sm font-normal leading-6">{'"'}{post.body}{'"'}</p></li>
+            <li><h2 className="text-[##5D5A88] text-sm font-bold leading-5 ">{post.title}</h2></li>
           </ul>
         )
 

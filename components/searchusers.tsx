@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { ChangeEvent,useState } from 'react';
 import ListUser from './listuser';
-
+import { libreFranklin } from '@/app/fonts';
 interface UserList {
     id: number;
     name: string;
@@ -40,13 +40,13 @@ export default function SearchUsers({users}:{users:UserList[]}) {
                     />
                         <input
                             type="search"
-                            className="flex-1 pl-1 sm:pl-10 border-none outline-none text-sm font-libre-franklin font-normal leading-normal text-[#808B9B] translate-x-[-30px]"
+                            className={`flex-1 pl-1 sm:pl-10 border-none outline-none ${libreFranklin.className} text-sm  font-normal leading-normal text-[#808B9B] translate-x-[-30px]`}
                             value={value}
                             onChange={handleChange}
                             placeholder='Buscar por nombre'
                         />
                 </div>
-                <button onClick={handleOrder} className={`text-sm font-libre-franklin font-semibold px-0 sm:px-4 py-3 ${order ? 'bg-[#FDF9F7] text-[#ED8936] border rounded-[32px] border-[#ED8936]  ' :'text-[#2D1937] bg-white' }  w-4/12 sm:w-auto hover:scale-110`}>
+                <button onClick={handleOrder} className={`${libreFranklin.className} text-sm  font-semibold px-0 sm:px-4 py-3 ${order ? 'bg-[#FDF9F7] text-[#ED8936] border rounded-[32px] border-[#ED8936]  ' :'text-[#2D1937] bg-white' }  w-4/12 sm:w-auto hover:scale-110`}>
                    <p className='hidden sm:block'> Ordenar por nombre </p>
                    <p className='block sm:hidden'> Ordenar (A - Z) </p>
                     </button>

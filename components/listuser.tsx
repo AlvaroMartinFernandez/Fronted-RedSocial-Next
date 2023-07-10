@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Load from "./load";
 import Modal from "./modal";
-
+import { libreFranklin } from "@/app/fonts";
 interface UserList {
     id: number;
     name: string;
@@ -163,7 +163,7 @@ export default function ListUser({ users, filter, order }: { users: UserList[], 
             </ul >
 
 
-            <div className="flex justify-center items-center gap-2">
+            <div className={`${libreFranklin.className} flex justify-center items-center gap-2`}>
                 <ul className="inline-flex justify-center gap-2 items-center ">
                     <li className={`flex justify-center items-center py-1 bg-[#FDF9F7] border rounded w-8 ${page > 0 ? 'border-[#FFC592] hover:scale-110' : 'border-[#D7D7D7]'}`}> <button className="inline-flex hover:scale-110" disabled={page > 0 ? false : true} onClick={() => { setPage(0) }}>
                         <Image
@@ -193,7 +193,7 @@ export default function ListUser({ users, filter, order }: { users: UserList[], 
                             priority
                         />
                     </button></li>
-                    <li className="flex justify-center items-center  px-3 bg-[#FDF9F7] border rounded-md border-[#FFC592] "> <button disabled={true} className="text-xs text-center font-normal leading-7 text-[#FE9705]">{`${page + 1} de ${maxpagination + 1}`}</button></li>
+                    <li className="flex justify-center items-center  px-3 bg-[#FDF9F7] border rounded-md border-[#FFC592] "> <button disabled={true} className={`${libreFranklin.className} text-xs text-center font-normal leading-7 text-[#FE9705]`}>{`${page + 1} de ${maxpagination + 1}`}</button></li>
                     <li className={`flex justify-center items-center py-1 bg-[#FDF9F7] border rounded w-8 ${maxpagination > page ? 'border-[#FFC592] hover:scale-110' : 'border-[#D7D7D7]'}`}> <button disabled={page >= maxpagination ? true : false} onClick={() => { setPage((prevPage: number) => prevPage + 1) }}>
                         <Image
                             src={maxpagination > page ? "/ordenador der orange.svg" : "/ordenador der grey.svg"}

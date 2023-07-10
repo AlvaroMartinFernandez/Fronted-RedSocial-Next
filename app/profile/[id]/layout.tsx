@@ -1,5 +1,6 @@
 import ProfileUser from "@/components/profileuser"
 import Image from 'next/image'
+import { dmSans } from "@/app/fonts";
 interface User {
   id: number;
   name: string;
@@ -66,7 +67,7 @@ export default async function ProfileLayout({
           height={120}
           priority
         />
-        <h2 className="text-xl font-semibold text-center text-[#4B4B52]">No existe el usuarios</h2>
+        <h2 className={`${dmSans.className}text-xl font-semibold text-center text-[#4B4B52]`}>No existe el usuarios</h2>
       </div>
       </div>
     )

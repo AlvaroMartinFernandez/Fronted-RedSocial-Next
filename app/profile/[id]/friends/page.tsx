@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { dmSans } from "@/app/fonts";
+
 type UserFriend = {
   name: string;
   photourl: string;
@@ -53,7 +55,7 @@ export default async function FriendProfile({ params }: {
   if (user.Friends.length ===0){
     
     return (
-      <div className="flex justify-center items-center mt-20">
+      <div className={`${dmSans.className} flex justify-center items-center mt-20`}>
       <div className="flex-col justify-center items-center">
         <Image
           src="/empty-box.svg"

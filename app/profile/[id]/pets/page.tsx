@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { dmSans } from "@/app/fonts";
+
 type UserFriend = {
   name: string;
   photourl: string;
@@ -62,7 +64,7 @@ export default async function PetProfile({ params }: {
   if (pet.Pets.length ===0 ){
     
     return (
-      <div className="flex justify-center items-center mt-20">
+      <div className={`${dmSans.className} flex justify-center items-center mt-20`}>
       <div className="flex-col justify-center items-center">
         <Image
           src="/empty-box.svg"
@@ -73,7 +75,7 @@ export default async function PetProfile({ params }: {
           priority
         />
         <h2 className="mt-3 text-xl font-semibold text-center text-[#4B4B52]">Aun no tiene</h2>
-        <h2 className="mt-3 text-xl font-semibold text-center text-[#4B4B52]"> mascotas</h2>
+        <h2 className="mt-3 text-xl font-semibold text-center text-[#4B4B52] translate-y-[-10px]"> mascotas</h2>
       </div>
       </div>
     )
@@ -93,7 +95,7 @@ export default async function PetProfile({ params }: {
                   height={50}
                   priority
                 />
-                <h2 className="text-[#1B141F] font-rubik text-lg font-normal leading-normal ">{pet.name_pet}</h2>
+                <h2 className="text-[#1B141F] text-lg font-normal leading-normal ">{pet.name_pet}</h2>
               </div>
             </li>
           </ul>)

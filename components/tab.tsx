@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { usePathname } from 'next/navigation'
+import { libreFranklin } from "@/app/fonts";
  interface TabActive {
     Friend: boolean;   
     Pet: boolean;
@@ -24,19 +25,19 @@ export default function Tab() {
     return (
 
         <div className="flex  justify-center items-center gap-6">
-            <ul className="flex flex-wrap -mb-px md:gap-15 sm:gap-10">
+            <ul className={`${libreFranklin.className} flex flex-wrap -mb-px md:gap-15 sm:gap-10`}>
                 <li className={`flex w-118 px-4 py-2 justify-center items-start flex-shrink-0 rounded-lg ${active.Friend ?"bg-[#FDF9F7]":"bg-white"} hover:scale-105`}>
-                    <button onClick={handleClickFriend}>  <Link href={`/profile/${param.id}/friends`} className={`text-center text-14 font-libre-franklin leading-24 ${active.Friend ? "text-[#ED8936] font-medium bg-[#FDF9F7]" : "text-[#4B4B52] font-semibold bg-white"
+                    <button onClick={handleClickFriend}>  <Link href={`/profile/${param.id}/friends`} className={`${libreFranklin.className} text-center text-14 leading-24 ${active.Friend ? "text-[#ED8936] font-medium bg-[#FDF9F7]" : "text-[#4B4B52] font-semibold bg-white"
                         }`}
                         aria-current={active.Friend ? "page" : undefined}>Amigos</Link></button>
                 </li>
                 <li className={`flex w-118 px-4 py-2 justify-center items-start flex-shrink-0 rounded-lg ${active.Pet ?"bg-[#FDF9F7]":"bg-white"} hover:scale-105`}>
-                    <button onClick={handleClickPet}> <Link href={`/profile/${param.id}/pets`} className={`text-center text-14 font-libre-franklin leading-24 ${active.Pet ? "text-[#ED8936] font-medium bg-[#FDF9F7]" : "text-[#4B4B52] font-semibold bg-white"
+                    <button onClick={handleClickPet}> <Link href={`/profile/${param.id}/pets`} className={`${libreFranklin.className} text-center text-14 leading-24 ${active.Pet ? "text-[#ED8936] font-medium bg-[#FDF9F7]" : "text-[#4B4B52] font-semibold bg-white"
                         }`}
                         aria-current={active.Pet ? "page" : undefined}>Mascotas</Link></button>
                 </li>
                 <li className={`flex w-118 px-4 py-2 justify-center items-start flex-shrink-0 rounded-lg ${active.Post ?"bg-[#FDF9F7]":"bg-white"} hover:scale-105`}>
-                    <button onClick={handleClickPost}> <Link href={`/profile/${param.id}`} className={`text-center text-14 font-libre-franklin leading-24 ${active.Post ? "text-[#ED8936] font-medium bg-[#FDF9F7]" : "text-[#4B4B52] font-semibold bg-white"
+                    <button onClick={handleClickPost}> <Link href={`/profile/${param.id}`} className={`${libreFranklin.className} text-center text-14 fleading-24 ${active.Post ? "text-[#ED8936] font-medium bg-[#FDF9F7]" : "text-[#4B4B52] font-semibold bg-white"
                         }`}
                         aria-current={active.Post ? "page" : undefined}>Comentarios</Link></button>
                 </li>
